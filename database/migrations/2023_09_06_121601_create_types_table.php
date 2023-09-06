@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('types', function (Blueprint $table) {
             $table->id();
+            $table->varchar('name')->unique();
+            $table->char('color')->default('#ffffff');
             $table->timestamps();
         });
     }
