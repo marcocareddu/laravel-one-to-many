@@ -22,7 +22,8 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view('admin.types.create');
+        $type = new Type();
+        return view('admin.types.create', compact('type'));
     }
 
     /**
@@ -66,7 +67,7 @@ class TypeController extends Controller
         $request->validate([], []);
 
         $data = $request->all();
-        $type->update();
+        $type->update($data);
 
         return to_route('admin.types.show', $type);
     }
@@ -78,5 +79,28 @@ class TypeController extends Controller
     {
         $type->delete();
         return to_route('admin.types.index');
+    }
+
+    // Trash Project
+    public function trash()
+    {
+        $types = Type::onlyTrashed()->get();
+        return view('admin.types.trash', compact('types'));
+    }
+
+    // Restore Project
+    public function restore(string $id)
+    {
+        $type = Type::onlyTrashed()->findOrFail($id);
+        $type->restore();
+        return to_route('admin.types.trash');
+    }
+
+    // Drop Project
+    public function drop(string $id)
+    {
+        $type = Type::onlyTrashed()->findOrFail($id);
+        $type->forceDelete();
+        return to_route('admin.types.trash');
     }
 }

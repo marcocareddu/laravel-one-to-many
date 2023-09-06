@@ -30,6 +30,9 @@ Route::prefix('/')->name('guest.')->group(function () {
 Route::prefix('/admin')->middleware('auth', 'verified')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
 
+
+
+    // ################## PROJECTS ##################
     // Trash route
     Route::get('/projects/trash', [ProjectController::class, 'trash'])->name('projects.trash');
 
@@ -42,8 +45,20 @@ Route::prefix('/admin')->middleware('auth', 'verified')->name('admin.')->group(f
     // Admin Projects routes
     Route::resource('projects', ProjectController::class);
 
+
+
+    // ################## TYPES ##################
     // Types Route
     Route::resource('/types', TypeController::class);
+
+    // Types Trash route
+    Route::get('/types/trash', [TypeController::class, 'trash'])->name('types.trash');
+
+    // Types Restore Projects Route 
+    Route::patch('/types/{type}/restore', [TypeController::class, 'restore'])->name('types.restore');
+
+    // Types Drop Projects Route 
+    Route::delete('/types/{type}/drop', [TypeController::class, 'drop'])->name('types.drop');
 });
 
 

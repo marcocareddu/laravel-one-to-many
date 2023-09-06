@@ -133,7 +133,7 @@ class ProjectController extends Controller
             ->with('toast-message', 'Progetto eliminato');
     }
 
-    // Trash Comic
+    // Trash Project
     public function trash()
     {
         $projects = Project::onlyTrashed()->get();
