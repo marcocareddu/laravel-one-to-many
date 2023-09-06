@@ -17,4 +17,10 @@ class Project extends Model
         'description',
         'thumb'
     ];
+
+    // Define Releation - Depends on type
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

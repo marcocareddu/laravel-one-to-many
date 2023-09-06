@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Type extends Model
 {
     use HasFactory;
+
+    // Define Releation - Indipendents from type 
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
 }
