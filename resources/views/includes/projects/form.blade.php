@@ -42,6 +42,16 @@
             <textarea type="text" id="description" name="description" class="form-control">{{ old('description', $project->description) }}</textarea>
         </div>
 
+        {{-- Relation Type --}}
+        <div class="mb-3 col-12 text-start">
+            <label class="form-label" for="type">Tipologia</label>
+            <select name="type_id" id="type">
+                @foreach ($types as $type)
+                    <option value="">{{ $type->label }}</option>
+                @endforeach
+            </select>
+        </div>
+
         {{-- Thumb --}}
         <div class="col-10 text-start">
             <div class="mb-3">
