@@ -16,6 +16,9 @@
                         <div>
                             <h5 class="card-title">{{ $project->name }}</h5>
                             <p class="card-text">{{ $project->description }}</p>
+
+                            {{-- Dinamic Relation HERE --}}
+                            <h4>{{ $project->type?->label }}</h4>
                         </div>
                         <div class="d-flex">
                             <a href="{{ $project->url }}" class="btn btn-outline-dark"><i
