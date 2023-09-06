@@ -18,10 +18,6 @@ return new class extends Migration
             $table->string('url')->unique();
             $table->text('description')->nullable();
             $table->string('thumb')->nullable();
-
-            // Column for relations
-            $table->foreignId('type_id')->nullable()->after('id')->constrained()->nullOnDelete();
-
             $table->timestamps();
             $table->softDeletes();
         });

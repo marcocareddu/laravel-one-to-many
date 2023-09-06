@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('types', function (Blueprint $table) {
             $table->id();
-            $table->varchar('label')->unique();
-            $table->char('color')->default('#ffffff');
+            $table->string('label')->unique();
+            $table->char('color', 7)->default('#ffffff');
             $table->timestamps();
         });
     }
