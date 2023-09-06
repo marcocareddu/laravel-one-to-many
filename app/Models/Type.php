@@ -9,6 +9,7 @@ class Type extends Model
 {
     use HasFactory;
 
+
     // Define Releation - Indipendents from type 
     public function projects()
     {
