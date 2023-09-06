@@ -15,7 +15,8 @@ class Project extends Model
         'name',
         'url',
         'description',
-        'thumb'
+        'thumb',
+        'type_id'
     ];
 
     // Define Releation - Depends on type
