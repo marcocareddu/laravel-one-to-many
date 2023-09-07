@@ -48,11 +48,11 @@ Route::prefix('/admin')->middleware('auth', 'verified')->name('admin.')->group(f
 
 
     // ################## TYPES ##################
-    // Types Route
-    Route::resource('/types', TypeController::class);
-
     // Types Trash route
     Route::get('/types/trash', [TypeController::class, 'trash'])->name('types.trash');
+
+    // Types Route
+    Route::resource('/types', TypeController::class);
 
     // Types Restore Projects Route 
     Route::patch('/types/{type}/restore', [TypeController::class, 'restore'])->name('types.restore');

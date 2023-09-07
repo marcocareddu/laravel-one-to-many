@@ -5,7 +5,7 @@
 @section('main-content')
 
     <div class="container">
-        <h1 class="text-center my-3">Tipi Cancellati</h1>
+        <h1 class="text-center py-3">Tipi Cancellati</h1>
         <div class="row">
 
             @forelse ($types as $type)

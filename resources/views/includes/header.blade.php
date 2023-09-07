@@ -51,6 +51,10 @@
                     @endif
                 @else
                     <li class="nav-item me-2">
+                        <a class="btn btn-outline-danger" href="{{ route('admin.types.trash') }}"><i
+                                class="fa-solid fa-trash-can"></i>Tipologie</a>
+                    </li>
+                    <li class="nav-item me-2">
                         <a class="btn btn-outline-danger" href="{{ route('admin.projects.trash') }}"><i
                                 class="fa-solid fa-trash-can"></i></a>
                     </li>
