@@ -27,7 +27,7 @@
         <div class="mb-3 col-12 text-start">
             <label for="name">Nome</label>
             <input type="text" id="name" name="name"
-                class="form-control @error('name') is-invalid @elseif (old('name')) is-valid @enderror"
+                class="form-control bg-dark  @error('name') is-invalid @elseif (old('name')) is-valid @enderror"
                 value="{{ old('name', $project->name) }}" autofocus required>
             @error('name')
                 <div class="invalid-feedback">
@@ -39,12 +39,12 @@
         {{-- Description --}}
         <div class="mb-3 col-12 text-start">
             <label class="form-label" for="description">Descrizione</label>
-            <textarea type="text" id="description" name="description" class="form-control">{{ old('description', $project->description) }}</textarea>
+            <textarea type="text" id="description" name="description" class="form-control bg-dark">{{ old('description', $project->description) }}</textarea>
         </div>
 
         {{-- Relation Type --}}
         <div class="mb-3 col-12 text-start">
-            <label class="form-label" for="type">Tipologia</label>
+            <label class="form-label bg-dark" for="type">Tipologia</label>
             <select name="type_id" id="type">
                 @foreach ($types as $type)
                     <option value="">{{ $type->label }}</option>
@@ -57,7 +57,7 @@
             <div class="mb-3">
                 <label class="form-label" for="thumb">Immagine</label>
                 <input type="file" id="thumb" name="thumb"
-                    class="form-control @error('thumb') is-invalid @elseif (old('thumb')) is-valid @enderror"
+                    class="form-control bg-dark @error('thumb') is-invalid @elseif (old('thumb')) is-valid @enderror"
                     value="{{ old('thumb', $project->thumb) }}" required>
                 @error('thumb')
                     <div class="invalid-feedback">
@@ -79,7 +79,7 @@
         <div class="mb-3 col-12 text-start">
             <label class="form-label" for="url">Github</label>
             <input type="url" id="url" name="url"
-                class="form-control @error('url') is-invalid @elseif (old('url')) is-valid @enderror"
+                class="form-control bg-dark @error('url') is-invalid @elseif (old('url')) is-valid @enderror"
                 value="{{ old('url', $project->url) }}" required>
             @error('url')
                 <div class="invalid-feedback">
